@@ -1,0 +1,24 @@
+/* =================
+    Defaults Reset 
+  ================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* Body defaults and Background */
+body {
+  height: 100vh;
+background: linear-gradient(to right, #0af2b6,#5f119e, #8a2387, #e94057,#f27,#5f119e,#0af2b6); 
+  background-size: 600%;
+  animation: 40s move infinite linear;
+}
+/* Background animation */
+@keyframes move{
+  to {
+    background-position: 100%;
+  }
+}
+/* =================
+    Defaults reset End 
+  ================= */
