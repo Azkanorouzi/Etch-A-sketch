@@ -20,7 +20,7 @@ main {
   height: 100%;
   display: grid;
   place-content: center;
-  grid-auto-flow: column;
+
   font-family: 'Roboto', sans-serif;
 }
 /* Background animation */
@@ -32,3 +32,5 @@ main {
 /* =================
     Defaults reset End 
   ================= */
+
+
