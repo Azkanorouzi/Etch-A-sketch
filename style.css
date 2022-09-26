@@ -6,12 +6,17 @@
   margin: 0;
   padding: 0;
 }
+/* Default text */
+:root {
+  --main-background-color: linear-gradient(to right, #0af2b6,#5f119e, #8a2387, #e94057,#f27,#5f119e,#0af2b6);
+  --main-text-color:linear-gradient(to right, hsl(164, 92%, 39%),hsl(273, 81%, 24%), hsl(302, 60%, 24%), hsl(352, 79%, 38%),hsl(337, 100%, 37%),hsl(273, 81%, 24%),hsl(164, 92%, 29%)); 
+}
 /* Font */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
 /* Body defaults and Background */
 body {
   height: 100vh;
-background: linear-gradient(to right, #0af2b6,#5f119e, #8a2387, #e94057,#f27,#5f119e,#0af2b6); 
+  background:var(--main-background-color);
   background-size: 600%;
   animation: 90s move infinite linear;
 }
@@ -29,7 +34,7 @@ main {
 .main-title {
   font-size: 2.5rem;
   /* effect */
-  background:linear-gradient(to right, hsl(164, 92%, 39%),hsl(273, 81%, 24%), hsl(302, 60%, 24%), hsl(352, 79%, 38%),hsl(337, 100%, 37%),hsl(273, 81%, 24%),hsl(164, 92%, 29%)); 
+  background:var(--main-text-color);
   background-size: 600%;
   background-clip: text;
   -webkit-background-clip: text;
