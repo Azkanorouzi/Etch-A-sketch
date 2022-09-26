@@ -23,7 +23,18 @@ main {
 
   font-family: 'Roboto', sans-serif;
 }
-/* Background animation */
+/* main title */
+.main-title {
+  font-size: 2rem;
+  /* effect */
+  background:linear-gradient(to right, hsl(164, 92%, 39%),hsl(273, 81%, 24%), hsl(302, 60%, 24%), hsl(352, 79%, 38%),hsl(337, 100%, 37%),hsl(273, 81%, 24%),hsl(164, 92%, 29%)); 
+  background-size: 600%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: 10s move infinite linear;
+}
+/* Background, text animation */
 @keyframes move{
   to {
     background-position: 600%;
