@@ -6,17 +6,27 @@
   margin: 0;
   padding: 0;
 }
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
 /* Body defaults and Background */
 body {
   height: 100vh;
 background: linear-gradient(to right, #0af2b6,#5f119e, #8a2387, #e94057,#f27,#5f119e,#0af2b6); 
   background-size: 600%;
-  animation: 40s move infinite linear;
+  animation: 90s move infinite linear;
+}
+/* Centering content of the page*/
+main {
+  height: 100%;
+  display: grid;
+  place-content: center;
+  grid-auto-flow: column;
+  font-family: 'Roboto', sans-serif;
 }
 /* Background animation */
 @keyframes move{
   to {
-    background-position: 100%;
+    background-position: 600%;
   }
 }
 /* =================
