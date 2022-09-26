@@ -10,6 +10,7 @@
 :root {
   --main-background-color: linear-gradient(to right, #0af2b6,#5f119e, #8a2387, #e94057,#f27,#5f119e,#0af2b6);
   --main-text-color:linear-gradient(to right, hsl(164, 92%, 39%),hsl(273, 81%, 24%), hsl(302, 60%, 24%), hsl(352, 79%, 38%),hsl(337, 100%, 37%),hsl(273, 81%, 24%),hsl(164, 92%, 29%)); 
+  --range-input-gradient: linear-gradient(to right, #e94057,#f27)
 }
 /* Font */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
@@ -50,8 +51,21 @@ main {
 /* Buttons */
 .btn {
   padding: .3rem;
-  width: 200px;
   font-size: 1.5rem;
+  color: black;
+  background:rgba(255, 255, 255, 0.457);
+  margin: 2px;
+  width: 100%;
+  box-shadow: 1px 1px 1px black;
+}
+.btn:hover {
+  background: rgba(255, 255, 255)
+}
+.btn:focus {
+  outline:none;
+}
+input:focus {
+  outline: none;
 }
 /* =================
     Defaults reset End 
@@ -62,11 +76,14 @@ main {
   ================= */
   /* ===== Cards defaults ===== */
   article {
+    max-width: 480px;
     background: rgba(123, 123, 123, 0.373);
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    border: 2px  black;
+  box-shadow: 1px 1px 1px black;
   }
   /* ===== grid box ===== */
   .grid-box {
@@ -76,6 +93,7 @@ main {
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: repeat(4,1fr);
+    border: 2px solid black;
   }
   /* ===== Settings ===== */
   .settings {
@@ -83,7 +101,65 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: .1rem;
+    gap: 1rem;
+  }
+  /* button container */
+  .button-container {
+    width: 100%;
+    display: flex;
+    gap: 5px;
+  }
+  .button-container>div{
+    flex:1;
+  }
+  /* Input color */
+  input[type="color"] {
+    -webkit-appearance: none;
+    border: none;
+    width: 420px;
+    height:50px;
+    opacity: 1;
+  }
+  input[type="color"]::-webkit-color-swatch {
+    border: none;
+  }
+  input[type="color"]::-webkit-color-swatch-wrapper {
+    border: 2px solid black;
+    padding: 0;
+  }
+  /* Input range */
+  input[type="range"] {
+    -webkit-appearance: none;
+    background: rgba(255,255,255,0.5);
+    background-image: var(--range-input-gradient);
+    background-size: 50% 100%;
+    background-repeat: no-repeat;
+    cursor: pointer !important;
+    width: 100%;
+  }
+  /* Google chrome input range settings*/
+  input[type="range"]::-webkit-slider-runnable-track {
+
+    height: 1.5rem;
+    border: 2px solid black;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: black;
+    height: 100%;
+    width: 25px;
+  }
+
+  /* Firefox range settings */
+  input[type="range"]::-moz-range-track {
+    background: #aaa;
+    height: 1.5rem;
+  }
+  input[type="range"]::-moz-range-thumb {
+    border: none;
+    border-radius: 0;
+    background: #aaa;
+    height: 1.5rem;
   }
 /* =================
     Card end

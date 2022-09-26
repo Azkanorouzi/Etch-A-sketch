@@ -20,10 +20,11 @@
         <!-- ====== grid box end ====== -->
         <!-- ====== settings start ====== -->
         <section class="settings" id="settings">
-          <input type="color" name="colorPicker" id="colorPicker" />
+          <input type="color" name="colorPicker" id="colorPicker" class="color-picker"/>
           <!-- Buttons -->
           <section class="button-container">
-            <button class="btn" data-button="customColor">Custom color</button>
+          <!-- Season buttons -->
+          <div class="season-mode-colors">
             <button class="btn" data-button="winterColors">
               Winter colors
             </button>
@@ -32,12 +33,17 @@
             </button>
             <button class="btn" data-button="summerColor">Summer colors</button>
             <button class="btn" data-button="fallColor">fall colors</button>
+          </div>
+          <!-- Color mode buttons and clear -->
+          <div class="color-mode-buttons">
+            <button class="btn" data-button="customColor">Custom color</button>
             <button class="btn" data-button="rainbowMode">Rainbow mode</button>
             <button class="btn" data-button="grayScale">Gray scale</button>
             <button class="btn" data-button="clear">clear</button>
+          </div>
           </section>
           <!-- range input -->
-          <input type="range" name="range" id="rangeInput" />
+          <input type="range" name="range" id="range" min="0" max="100" oninput="rangevalue.value=value"/>
           <!-- grid box -->
         </section>
         <!-- ====== settings end ====== -->
@@ -48,6 +54,7 @@
     </main>
     <!-- ====== Main end ======-->
     <!--  ====== Js ====== -->
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/inputRange.js"></script>
   </body>
 </html>
