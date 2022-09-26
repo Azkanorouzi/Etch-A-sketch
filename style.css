@@ -37,9 +37,10 @@ main {
   ================= */
   article {
     /* TODO:change border radius padding */
-    padding: px;
-    background: red;
+    background: white;
+    opacity: .3;
     border-radius: 10px;
+    padding: 20px;
   }
 /* =================
     Card end
