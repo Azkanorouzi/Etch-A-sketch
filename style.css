@@ -32,3 +32,17 @@ main {
 /* =================
     Defaults reset End 
   ================= */
+
+/* =================
+    Card start
+  ================= */
+  article {
+    /* TODO:change border radius padding */
+    background: white;
+    opacity: .3;
+    border-radius: 10px;
+    padding: 20px;
+  }
+/* =================
+    Card end
+  ================= */
