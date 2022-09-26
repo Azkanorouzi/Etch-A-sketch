@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Css -->
     <link rel="stylesheet" href="style.css" />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet"> 
     <!-- title -->
     <title>Etch-a-Sketch | Azka</title>
   </head>
@@ -25,6 +29,7 @@
           <section class="button-container">
           <!-- Season buttons -->
           <div class="season-mode-colors">
+            <button class="btn" data-button="rainbowMode">Rainbow mode</button>
             <button class="btn" data-button="winterColors">
               Winter colors
             </button>
@@ -32,14 +37,15 @@
               Spring colors
             </button>
             <button class="btn" data-button="summerColor">Summer colors</button>
-            <button class="btn" data-button="fallColor">fall colors</button>
+            <button class="btn" data-button="fallColor">Fall colors</button>
           </div>
           <!-- Color mode buttons and clear -->
           <div class="color-mode-buttons">
             <button class="btn" data-button="customColor">Custom color</button>
-            <button class="btn" data-button="rainbowMode">Rainbow mode</button>
             <button class="btn" data-button="grayScale">Gray scale</button>
-            <button class="btn" data-button="clear">clear</button>
+            <button class="btn" data-button="Fancy">Fancy</button>
+            <button class="btn" data-button="eraser">Eraser</button>
+            <button class="btn" data-button="clear">Clear</button>
           </div>
           </section>
           <!-- range input -->
@@ -47,8 +53,6 @@
           <!-- grid box -->
         </section>
         <!-- ====== settings end ====== -->
-
-        <!-- Main title -->
       </article>
       <!-- ====== Card end ====== -->
     </main>
