@@ -1,51 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Css -->
-  <link rel="stylesheet" href="style.css">
-  <!-- title -->
-  <title>Etch-a-Sketch | Azka</title>
-</head>
-<body>
-  <!-- ====== Main start ====== -->
-  <main>
-    <!-- ====== Card start ====== -->
-    <h1 class="main-title">ETCH A SKETCH</h1>
-    <article class="card">
-      <!-- ====== grid box start ====== -->
-      <section class="grid-box" id="grid-box">
-      </section>
-      <!-- ====== grid box end ====== -->
-      <!-- ====== settings start ====== -->
-      <section class="settings" id="settings">
-        <input type="color" name="colorPicker" id="colorPicker">
-        <!-- Buttons -->
-        <button class="btn" data-button="customColor">Custom color</button>
-        <button class="btn" data-button="winterColors">Winter colors</button>
-        <button class="btn"
-        data-button="sprintColors">Spring colors</button>
-        <button class="btn"
-        data-button="summerColor">Summer colors</button>
-        <button class="btn" data-button="fallColor">fall colors</button>
-        <button class="btn"
-        data-button="rainbowMode">Rainbow mode</button>
-        <button class="btn" data-button="grayScale">Gray scale</button>
-        <button class="btn" data-button="clear">clear</button>
-        <!-- range input -->
-        <input type="range" name="range" id="rangeInput">
-        <!-- grid box -->
-      </section>
-      <!-- ====== settings end ====== -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Css -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- title -->
+    <title>Etch-a-Sketch | Azka</title>
+  </head>
+  <body>
+    <!-- ====== Main start ====== -->
+    <main>
+      <!-- ====== Card start ====== -->
+      <h1 class="main-title">ETCH A SKETCH</h1>
+      <article class="card">
+        <!-- ====== grid box start ====== -->
+        <section class="grid-box" id="grid-box"></section>
+        <!-- ====== grid box end ====== -->
+        <!-- ====== settings start ====== -->
+        <section class="settings" id="settings">
+          <input type="color" name="colorPicker" id="colorPicker" />
+          <!-- Buttons -->
+          <section class="button-container">
+            <button class="btn" data-button="customColor">Custom color</button>
+            <button class="btn" data-button="winterColors">
+              Winter colors
+            </button>
+            <button class="btn" data-button="sprintColors">
+              Spring colors
+            </button>
+            <button class="btn" data-button="summerColor">Summer colors</button>
+            <button class="btn" data-button="fallColor">fall colors</button>
+            <button class="btn" data-button="rainbowMode">Rainbow mode</button>
+            <button class="btn" data-button="grayScale">Gray scale</button>
+            <button class="btn" data-button="clear">clear</button>
+          </section>
+          <!-- range input -->
+          <input type="range" name="range" id="rangeInput" />
+          <!-- grid box -->
+        </section>
+        <!-- ====== settings end ====== -->
 
-    <!-- Main title -->
-    </article>
-    <!-- ====== Card end ====== -->
-  </main>
-  <!-- ====== Main end ======-->
-  <!--  ====== Js ====== -->
-  <script src="script.js"></script>
-</body>
+        <!-- Main title -->
+      </article>
+      <!-- ====== Card end ====== -->
+    </main>
+    <!-- ====== Main end ======-->
+    <!--  ====== Js ====== -->
+    <script src="script.js"></script>
+  </body>
 </html>
