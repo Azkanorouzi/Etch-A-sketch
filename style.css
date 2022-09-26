@@ -22,11 +22,12 @@ main {
   display: grid;
   place-content: center;
   text-align: center;
+  gap: 20px;
   font-family: 'Roboto', sans-serif;
 }
 /* main title */
 .main-title {
-  font-size: 2rem;
+  font-size: 2.5rem;
   /* effect */
   background:linear-gradient(to right, hsl(164, 92%, 39%),hsl(273, 81%, 24%), hsl(302, 60%, 24%), hsl(352, 79%, 38%),hsl(337, 100%, 37%),hsl(273, 81%, 24%),hsl(164, 92%, 29%)); 
   background-size: 600%;
@@ -51,8 +52,15 @@ main {
   /* Cards defaults */
   article {
     background: rgba(123, 123, 123, 0.373);
-    border-radius: 10px;
     padding: 20px;
+  }
+  /* grid box */
+  .grid-box {
+    width: 100%;
+    height: 450px;
+    background: #aaa;
+    display: grid;
+
   }
 /* =================
     Card end
