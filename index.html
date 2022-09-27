@@ -24,33 +24,42 @@
         <!-- ====== grid box end ====== -->
         <!-- ====== settings start ====== -->
         <section class="settings" id="settings">
-          <input type="color" name="colorPicker" id="colorPicker" class="color-picker"/>
+        <input type="color" name="colorPicker" id="colorPicker" class="color-picker"/>
           <!-- Buttons -->
-          <section class="button-container">
+        <section class="button-container">
           <!-- Season buttons -->
           <div class="season-mode-colors">
             <button class="btn" data-button="rainbowMode">Rainbow mode</button>
-            <button class="btn" data-button="winterColors">
-              Winter colors
+            <button class="btn" data-button="coldColor">
+              Cold
             </button>
-            <button class="btn" data-button="sprintColors">
-              Spring colors
+            <button class="btn" data-button="warmColor">
+              Warm
             </button>
-            <button class="btn" data-button="summerColor">Summer colors</button>
-            <button class="btn" data-button="fallColor">Fall colors</button>
+            <button class="btn" data-button="darken">darken</button>
+            <button class="btn" data-button="lighten">lighten</button>
+            <button class="btn" data-button="FancyColor">Fancy</button>
           </div>
           <!-- Color mode buttons and clear -->
           <div class="color-mode-buttons">
             <button class="btn" data-button="customColor">Custom color</button>
-            <button class="btn" data-button="grayScale">Gray scale</button>
-            <button class="btn" data-button="Fancy">Fancy</button>
+            <button class="btn" data-button="BackgroundColor">Background color</button>
+            <button class="btn" data-button="Fancy">Toggle border</button>
             <button class="btn" data-button="eraser">Eraser</button>
             <button class="btn" data-button="clear">Clear</button>
+            <button class="btn" data-button="colorPicker">Color picker</button>
           </div>
           </section>
           <!-- range input -->
-          <input type="range" name="range" id="range" min="0" max="100" oninput="rangevalue.value=value"/>
-          <!-- grid box -->
+          <div class="range-input-container">
+            <!-- Grid size -->
+            <p class="grid size">Size: 
+              <span>32</span>
+              X
+              <span>32</span>
+            </p>
+            <input type="range" name="range" id="range" min="0" max="64" />
+          </div>
         </section>
         <!-- ====== settings end ====== -->
       </article>
