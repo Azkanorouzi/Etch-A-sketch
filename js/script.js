@@ -47,6 +47,10 @@ const buttons = document.querySelectorAll(".btn");
 const colorPicker = document.querySelector("#colorPicker");
 // pen color
 let penColor = "black";
+// Modes
+let rainbowMode ;
+let cold ;
+let warm ;
 for (let button of buttons) {
   // Finding the clicked button
   button.addEventListener("click", (e) => {
@@ -61,6 +65,11 @@ for (let button of buttons) {
         button.classList.remove("clicked");
         colorPicker;
         colorPicker.removeEventListener("input", setBackgroundColor);
+        colorPicker.removeEventListener("input", setBorderColor);
+        // Reseting mdoes
+        rainbowMode = false;
+        cold = false;
+        warm = false;
       }
     }
     // Custom button
@@ -71,6 +80,34 @@ for (let button of buttons) {
     // Background Color
     else if (clickedButtonName === "backgroundColor") {
       colorPicker.addEventListener("input", setBackgroundColor);
+    }
+    // Border color
+    else if (clickedButtonName === "borderColor") {
+      colorPicker.addEventListener("input", setBorderColor);
+    }
+    // toggle Border
+    else if (clickedButtonName === "toggleBorder") {
+      toggleBorder();
+    }
+    // eraser
+    else if (clickedButtonName === "eraser") {
+      setEraser();
+    }
+    // clear grid
+    else if (clickedButtonName === "clear") {
+      clearDivs();
+    }
+    // Rainbow mode
+    else if (clickedButtonName === "rainbowMode") {
+      rainbowMode = true;
+    }
+    // Warm mode
+    else if (clickedButtonName === "warm") {
+      warm = true;
+    }
+    // Cold mode
+    else if (clickedButtonName === "warm") {
+      cold = true;
     }
   });
 }
@@ -87,6 +124,59 @@ function setBackgroundColor() {
   customBackgroundColor = colorPicker.value;
   gridBox.style.backgroundColor = customBackgroundColor;
   return true;
+}
+// border color
+function setBorderColor() {
+  let customBorderColor;
+  customBorderColor = colorPicker.value;
+  for (let div of divs) {
+    div.style.borderColor = customBorderColor;
+  }
+  return true;
+}
+// Toggle border
+function toggleBorder() {
+  for (let div of divs) {
+    div.classList.toggle('border-none');
+  }
+  return true;
+}
+// Set eraser
+function setEraser() {
+  penColor = 'rgba(0,0,0,0)'
+}
+// Clear divs
+function clearDivs() {
+  for (div of divs) {
+    div.style.background = 'rgba(0,0,0,0)'
+  }
+}
+// Set rainbowMode
+function setRainbowMode() {
+  // Deciding between a color family
+  let randomColorFamily = getRandomNumber(3) + 1;
+  // 
+  if (randomColorFamily === 1) {
+    setRandomPenRgb(0, 255, 255);
+  }
+  // green = 0
+  else if (randomColorFamily === 2) {
+    setRandomPenRgb(255, 0, 255);
+  }
+  // blue = 0
+  else if (randomColorFamily === 3) {
+    setRandomPenRgb(255, 255, 0);
+  }
+  // Rgb
+  function setRandomPenRgb(red,green,blue) {
+    penColor = `rgb(${getRandomNumber(red)},${getRandomNumber(green)},${getRandomNumber(blue)})`;
+  }
+}
+
+// Getting a random number
+function getRandomNumber(max) {
+  let randomNumber = Math.trunc(Math.random() * max);
+  return randomNumber;
 }
 gridBox.addEventListener("mousedown", () => {
   for (let div of divs) {
@@ -108,6 +198,9 @@ gridBox.addEventListener("mouseup", () => {
 /* Changes div color to penColor */
 const applyPenColor = (e) => {
   let clickedDiv = e.target;
+  if (rainbowMode) {
+    setRainbowMode()
+  }
   clickedDiv.style.background = penColor;
   return true;
 };

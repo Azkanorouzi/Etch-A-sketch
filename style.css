@@ -125,11 +125,12 @@ article {
 .single-div {
   width: 1fr;
   height: 1fr;
-  background: rgba(170, 170, 170, 0);
   border: 1px solid black;
   -webkit-user-drag:none;
 }
-
+.border-none {
+  border: none;
+}
 /* ===== Settings ===== */
 .settings {
   display: flex;
@@ -216,7 +217,7 @@ input[type="range"]::-moz-range-thumb {
     Clicked buttons effects
   ================= */
   /* General clicked button */
-  .customColor.clicked,.backgroundColor.clicked,.toggleBorder.clicked,.eraser.clicked,.clear.clicked,.borderColor.clicked {
+  .customColor.clicked,.backgroundColor.clicked,.toggleBorder.clicked,.eraser.clicked,.borderColor.clicked {
     background:black;
   }
   /* Rainbow mode clicked button */
