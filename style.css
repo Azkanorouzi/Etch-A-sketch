@@ -118,7 +118,17 @@ article {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  border: 2px solid black;
+  border: 1px solid black;
+  -webkit-user-drag:none;
+
+}
+/* TODO: adjust */
+.single-div {
+  width: 1fr;
+  height: 1fr;
+  background: #aaa;
+  border: 1px solid black;
+  -webkit-user-drag:none;
 }
 /* ===== Settings ===== */
 .settings {
@@ -202,6 +212,16 @@ input[type="range"]::-moz-range-thumb {
 /* =================
     Card end
   ================= */
+/* =================
+    Clicked button effects
+  ================= */
+  
+/* =================
+    Clicked button effects end
+  ================= */
+/* =================
+    media query start
+  ================= */
 @media screen and (min-width: 1000px) {
   article.card {
     max-width: 1400px;
@@ -234,3 +254,6 @@ input[type="range"]::-moz-range-thumb {
     height: 100%;
   }
 }
+/* =================
+    media query end
+  ================= */
