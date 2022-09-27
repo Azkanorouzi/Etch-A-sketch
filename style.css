@@ -120,16 +120,16 @@ article {
   grid-template-rows: repeat(4, 1fr);
   border: 1px solid black;
   -webkit-user-drag:none;
-
 }
 /* TODO: adjust */
 .single-div {
   width: 1fr;
   height: 1fr;
-  background: #aaa;
+  background: rgba(170, 170, 170, 0);
   border: 1px solid black;
   -webkit-user-drag:none;
 }
+
 /* ===== Settings ===== */
 .settings {
   display: flex;
@@ -213,11 +213,42 @@ input[type="range"]::-moz-range-thumb {
     Card end
   ================= */
 /* =================
-    Clicked button effects
+    Clicked buttons effects
   ================= */
-  
+  /* General clicked button */
+  .customColor.clicked,.backgroundColor.clicked,.toggleBorder.clicked,.eraser.clicked,.clear.clicked,.borderColor.clicked {
+    background:black;
+  }
+  /* Rainbow mode clicked button */
+  .rainbowMode.clicked {
+    background: linear-gradient(to right,red,orange,yellow,green,blue,indigo);
+  }
+  /* Cold color */
+  .coldColor.clicked {
+    background: linear-gradient(to right,#00047e,#0038b9,#0ca6dd,#6845fb,#8b41ff);
+  }
+  /* Warm color */
+    .warmColor.clicked {
+    background: linear-gradient(to right,#de0c1c,#fe2d2d,#fb7830,#fecf02,#ffdd47);
+    }
+    /* Darken */
+    .darken.clicked {
+      background: linear-gradient(to right,#666666,#333333,#000000);
+      color: white;
+    }
+    /* Lighten */
+    .lighten.clicked {
+      background: linear-gradient(to right,#999,#aaa,#fff);
+      color: black;
+    }
+    /* Fancy */
+    .fancyColor.clicked {
+      background: var(--main-background-color);
+      background-size: 500%;
+      animation: 90s move linear infinite;
+    }
 /* =================
-    Clicked button effects end
+    Clicked buttons effects end
   ================= */
 /* =================
     media query start
