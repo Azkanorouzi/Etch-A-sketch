@@ -1,4 +1,4 @@
-<img src="./assets/screenShot.png" width="100" height="100">
+![preview](assets/screenShot.png);
 
 ## Hello! 👋
 
