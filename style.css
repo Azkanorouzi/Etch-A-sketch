@@ -59,6 +59,17 @@ main {
   -webkit-text-fill-color: transparent;
   animation: 10s move infinite linear;
 }
+/* Creator */
+.creator>span {
+
+  /* effect */
+  background: var(--main-text-color);
+  background-size: 600%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: 10s move infinite linear;
+}
 /* Background, text animation */
 @keyframes move {
   to {
@@ -251,6 +262,16 @@ input[type="range"]::-moz-range-thumb {
 /* =================
     Clicked buttons effects end
   ================= */
+  /* INFO */
+  .myLink {
+    font-size: 16px;
+    color: white;
+    text-decoration: none ;
+  }
+  .myLink:visited {
+    color: white;
+  }
+  
 /* =================
     media query start
   ================= */
