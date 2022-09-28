@@ -243,8 +243,8 @@ input[type="range"]::-moz-range-thumb {
       color: black;
     }
     /* Fancy */
-    .fancyColor.clicked {
-      background: var(--main-background-color);
+    .fancyColor.clicked,.fancyDiv {
+      background: var(--main-background-color) ;
       background-size: 500%;
       animation: 90s move linear infinite;
     }

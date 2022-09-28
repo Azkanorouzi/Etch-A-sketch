@@ -48,11 +48,12 @@ const colorPicker = document.querySelector("#colorPicker");
 // pen color
 let penColor = "rgb(0,0,0)";
 // Modes
-let rainbowMode ;
-let cold ;
+let rainbowMode;
+let cold;
 let warm;
 let darken;
 let lighten;
+let fancy;
 for (let button of buttons) {
   // Finding the clicked button
   button.addEventListener("click", (e) => {
@@ -68,13 +69,14 @@ for (let button of buttons) {
         colorPicker;
         colorPicker.removeEventListener("input", setBackgroundColor);
         colorPicker.removeEventListener("input", setBorderColor);
-        // Reseting mdoes
+        // Resetting mdoes
         rainbowMode = false;
         cold = false;
         warm = false;
         darken = false;
         lighten = false;
-        // Reseting the pen color
+        fancy = false;
+        // Resetting the pen color
         penColor = 'black'
       }
     }
@@ -122,6 +124,10 @@ for (let button of buttons) {
     // Cold mode
     else if (clickedButtonName === "lighten") {
       lighten = true;
+    }
+    // Fancy mode
+    else if (clickedButtonName === "fancyColor") {
+      fancy = true;
     }
   });
 }
@@ -244,6 +250,10 @@ function setLighten(rgbColor) {
   darkenRgb = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
   penColor = darkenRgb;
 }
+function setFancy(clickedDiv) {
+  clickedDiv.style.removeProperty('background')
+  clickedDiv.classList.add('fancyDiv')
+}
 gridBox.addEventListener("mousedown", () => {
   for (let div of divs) {
     // When mouse is hovered
@@ -280,8 +290,11 @@ const applyPenColor = (e) => {
   }
   else if (lighten) {
     setLighten(clickedDivColor);
-  }
+  } 
   clickedDiv.style.background = penColor;
+  if (fancy) {
+    setFancy(clickedDiv);
+  }
   console.log(penColor);
   return true;
 };
