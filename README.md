@@ -5,7 +5,7 @@
 Hello world this is me Azka.
 Create your very own pixel art with Etch a Sketch.
 
-live preview -> (https://azkanorouzi.github.io/Etch-A-sketch/)[live preview]
+live preview -> https://azkanorouzi.github.io/Etch-A-sketch/
 
 ## Features.
 
