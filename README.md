@@ -1,4 +1,4 @@
-![preview](assets/screenShot.png);
+![preview](assets/screenShot.png)
 
 ## Hello! 👋
 
