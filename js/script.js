@@ -295,7 +295,6 @@ const applyPenColor = (e) => {
   if (fancy) {
     setFancy(clickedDiv);
   }
-  console.log(penColor);
   return true;
 };
 /* used for Removing drag color to penColor */
