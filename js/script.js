@@ -46,11 +46,13 @@ function emptyGridBox() {
 const buttons = document.querySelectorAll(".btn");
 const colorPicker = document.querySelector("#colorPicker");
 // pen color
-let penColor = "black";
+let penColor = "rgb(0,0,0)";
 // Modes
 let rainbowMode ;
 let cold ;
-let warm ;
+let warm;
+let darken;
+let lighten;
 for (let button of buttons) {
   // Finding the clicked button
   button.addEventListener("click", (e) => {
@@ -70,6 +72,10 @@ for (let button of buttons) {
         rainbowMode = false;
         cold = false;
         warm = false;
+        darken = false;
+        lighten = false;
+        // Reseting the pen color
+        penColor = 'black'
       }
     }
     // Custom button
@@ -102,12 +108,20 @@ for (let button of buttons) {
       rainbowMode = true;
     }
     // Warm mode
-    else if (clickedButtonName === "warm") {
+    else if (clickedButtonName === "warmColor") {
       warm = true;
     }
     // Cold mode
-    else if (clickedButtonName === "warm") {
+    else if (clickedButtonName === "coldColor") {
       cold = true;
+    }
+    // Cold mode
+    else if (clickedButtonName === "darken") {
+      darken = true;
+    }
+    // Cold mode
+    else if (clickedButtonName === "lighten") {
+      lighten = true;
     }
   });
 }
@@ -172,11 +186,63 @@ function setRainbowMode() {
     penColor = `rgb(${getRandomNumber(red)},${getRandomNumber(green)},${getRandomNumber(blue)})`;
   }
 }
-
+// Set warm mode
+function setWarmMode() {
+  // Warm color pallette
+  const warmColors = ["#de0c1c", "#fe2d2d", "#fb7830", "#fecf02", "#ffdd47"];
+  // Choose randomly between one of the colors
+  const randomNumber = getRandomNumber(warmColors.length);
+  // Setting the pen color
+  penColor = warmColors[randomNumber];
+}
+// Set cold mode
+function setColdMode() {
+  // cold color pallette
+  const coldColors = ["#00047e","#0038b9","#0ca6dd","#6845fb","#8b41ff"];
+  // Choose randomly between one of the colors
+  const randomNumber = getRandomNumber(coldColors.length);
+  // Setting the pen color
+  penColor = coldColors[randomNumber];
+}
 // Getting a random number
 function getRandomNumber(max) {
   let randomNumber = Math.trunc(Math.random() * max);
   return randomNumber;
+}
+// Darken mode
+function setDarken(rgbColor) {
+  // Getting indexOf pare
+  let firstParentheses = rgbColor.indexOf("(")
+  let secondParentheses = rgbColor.indexOf(")")
+  // Converting rgbColor to an array of red green blue
+  let darkenRgb;
+  let rgb = rgbColor.slice(firstParentheses + 1, secondParentheses);
+  rgb = rgb.split(",");
+  for (let i = 0; i < 3; i++) {
+    rgb[i] = +rgb[i] - 20;
+    if (rgb[i] < 0) {
+      rgb[i] = 0;
+    }
+  }
+  darkenRgb = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
+  penColor = darkenRgb;
+}
+function setLighten(rgbColor) {
+  // Getting indexOf pare
+  let firstParentheses = rgbColor.indexOf("(")
+  let secondParentheses = rgbColor.indexOf(")")
+  // Converting rgbColor to an array of red green blue
+  let darkenRgb;
+  let rgb = rgbColor.slice(firstParentheses + 1, secondParentheses);
+  rgb = rgb.split(",");
+  for (let i = 0; i < 3; i++) {
+    rgb[i] = +rgb[i] + 20;
+    if (rgb[i] > 255) {
+      rgb[i] = 255;
+    }
+  }
+  darkenRgb = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
+  penColor = darkenRgb;
 }
 gridBox.addEventListener("mousedown", () => {
   for (let div of divs) {
@@ -198,10 +264,25 @@ gridBox.addEventListener("mouseup", () => {
 /* Changes div color to penColor */
 const applyPenColor = (e) => {
   let clickedDiv = e.target;
+  let clickedDivColor = getClickedDivColor();
+  // gets clicked div background color
+  function getClickedDivColor() {
+    return clickedDiv.style.background
+  }
   if (rainbowMode) {
-    setRainbowMode()
+    setRainbowMode();
+  } else if (warm) {
+    setWarmMode();
+  } else if (cold) {
+    setColdMode();
+  } else if (darken) {
+    setDarken(clickedDivColor);
+  }
+  else if (lighten) {
+    setLighten(clickedDivColor);
   }
   clickedDiv.style.background = penColor;
+  console.log(penColor);
   return true;
 };
 /* used for Removing drag color to penColor */
