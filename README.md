@@ -3,7 +3,7 @@
 ## Hello! 👋
 
 Hello world this is me Azka.
-Create your very own pixel art with Etch a Sketch.
+Create your very own pixel art with this beautiful responsive Etch a Sketch.
 
 live preview -> https://azkanorouzi.github.io/Etch-A-sketch/
 
