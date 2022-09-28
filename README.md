@@ -1,11 +1,11 @@
-![Design preview for the Testimonials grid section coding challenge](./assets/screenShot.png.png)
+(./assets/screenShot.png.png)[preview]
 
 ## Hello! 👋
 
 Hello world this is me Azka.
 Create your very own pixel art with Etch a Sketch.
 
-live -> (https://azkanorouzi.github.io/Etch-A-sketch/)
+live preview -> (https://azkanorouzi.github.io/Etch-A-sketch/)[live preview]
 
 ## Features.
 
